@@ -1,3 +1,14 @@
-ElasticNet:
+ElasticNet1:
+  model: "ElasticNet"
   alpha: 0.4
   l1_ratio: 0.1
+
+ElasticNet2:
+  model: "ElasticNet"
+  alpha: 0.6
+  l1_ratio: 0.3
+
+DecisionTree1:
+  model: "DecisionTree"
+  alpha: 0.6
+  l1_ratio: 0.3
