@@ -1,14 +1,18 @@
-ElasticNet1:
-  model: "ElasticNet"
-  alpha: 0.4
-  l1_ratio: 0.1
+# model:
+#   name: "ElasticNet"
+#   alpha: 0.4
+#   l1_ratio: 0.1
+# data_transformation:
+#   - name: TestTrainSpitter
+#   - name: StandardScaler
 
-ElasticNet2:
-  model: "ElasticNet"
-  alpha: 0.6
-  l1_ratio: 0.3
 
-DecisionTree1:
-  model: "DecisionTree"
+model:
+  name: "ElasticNet"
   alpha: 0.6
-  l1_ratio: 0.3
+  l1_ratio: 0.4
+
+data_transformation:
+  - name: TrainTestSplitterSK
+    test_size: 0.25
+  - name: StandardScalerSK

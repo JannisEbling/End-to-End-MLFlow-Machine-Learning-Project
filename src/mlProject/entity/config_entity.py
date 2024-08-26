@@ -22,6 +22,7 @@ class DataValidationConfig:
 class DataTransformationConfig:
     root_dir: Path
     data_path: Path
+    transformation_config: dict
 
 
 @dataclass(frozen=True)
@@ -29,9 +30,7 @@ class ModelTrainerConfig:
     root_dir: Path
     train_data_path: Path
     test_data_path: Path
-    model_name: str
-    alpha: float
-    l1_ratio: float
+    params: dict
     target_column: str
 
 
