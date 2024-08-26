@@ -27,4 +27,6 @@ class ModelTrainer:
         model_creator = ModelCreator()
         model = model_creator.create_model(model_config)
         model.fit(train_x, train_y)
-        joblib.dump(model, os.path.join(self.config.root_dir, models.model.name))
+        joblib.dump(
+            model, os.path.join(self.config.root_dir, models.model.name + ".joblib")
+        )

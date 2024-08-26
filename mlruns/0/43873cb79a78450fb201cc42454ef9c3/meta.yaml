@@ -1,0 +1,15 @@
+artifact_uri: file:///C:/Projekte/Data_Science/End-to-end-Machine-Learning-Project-with-MLflow/Git_Project/MLFlow-Machine-Learning/mlruns/0/43873cb79a78450fb201cc42454ef9c3/artifacts
+end_time: 1724684185690
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 43873cb79a78450fb201cc42454ef9c3
+run_name: orderly-yak-235
+run_uuid: 43873cb79a78450fb201cc42454ef9c3
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1724684175940
+status: 3
+tags: []
+user_id: je009447
