@@ -1,8 +1,8 @@
 import os
 
-import logger
-import pandas as pd
 from sklearn.model_selection import train_test_split
+
+from mlProject import logger
 
 
 class TrainTestSplitter:

@@ -23,6 +23,8 @@ class DataTransformationConfig:
     root_dir: Path
     data_path: Path
     transformation_config: dict
+    all_schema: dict
+    target: dict
 
 
 @dataclass(frozen=True)

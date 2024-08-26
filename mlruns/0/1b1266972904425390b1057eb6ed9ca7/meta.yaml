@@ -1,0 +1,15 @@
+artifact_uri: file:///C:/Projekte/Data_Science/End-to-end-Machine-Learning-Project-with-MLflow/Git_Project/MLFlow-Machine-Learning/mlruns/0/1b1266972904425390b1057eb6ed9ca7/artifacts
+end_time: 1724681846831
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 1b1266972904425390b1057eb6ed9ca7
+run_name: learned-kit-506
+run_uuid: 1b1266972904425390b1057eb6ed9ca7
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1724681837699
+status: 3
+tags: []
+user_id: je009447

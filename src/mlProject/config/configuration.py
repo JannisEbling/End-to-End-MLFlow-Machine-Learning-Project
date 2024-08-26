@@ -54,13 +54,18 @@ class ConfigurationManager:
 
     def get_data_transformation_config(self) -> DataTransformationConfig:
         config = self.config.data_transformation
+        transformation_config = self.params.data_transformation
+        schema = self.schema.COLUMNS
+        target = self.schema.TARGET_COLUMN
 
         create_directories([config.root_dir])
 
         data_transformation_config = DataTransformationConfig(
             root_dir=config.root_dir,
             data_path=config.data_path,
-            transformation_config=config.transformation_config,
+            transformation_config=transformation_config,
+            all_schema=schema,
+            target=target,
         )
 
         return data_transformation_config
@@ -84,7 +89,7 @@ class ConfigurationManager:
 
     def get_model_evaluation_config(self) -> ModelEvaluationConfig:
         config = self.config.model_evaluation
-        params = self.params.ElasticNet
+        params = self.params
         schema = self.schema.TARGET_COLUMN
 
         create_directories([config.root_dir])

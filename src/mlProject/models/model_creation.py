@@ -1,22 +1,21 @@
 # from mlProject.models import ElasticNet
-from sklearn.linear_model import ElasticNet
+from sklearn.linear_model import RidgeClassifier
 
 RANDOM_STATE = 42
 
 
 class ModelCreator:
 
-    def __init__(self, model_config):
-        self.model_config = model_config
+    def __init__(self):
+        pass
 
     def create_model(self, model_config):
-        model_type = model_config["model_type"]
-        if model_type == "ElasticNet":
+        self.model_config = model_config
+        model_type = self.model_config.name
+        if model_type == "RidgeClassifier":
             self.alpha = self.model_config.alpha
-            self.l1_ratio = self.model_config.l1_ratio
-            model = ElasticNet(
+            model = RidgeClassifier(
                 alpha=self.alpha,
-                l1_ratio=self.l1_ratio,
                 random_state=RANDOM_STATE,
             )
         return model

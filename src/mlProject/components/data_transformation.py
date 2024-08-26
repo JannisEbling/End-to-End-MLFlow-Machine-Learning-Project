@@ -1,35 +1,28 @@
 import os
-from mlProject import logger
-from sklearn.model_selection import train_test_split
+
 import pandas as pd
+from sklearn.model_selection import train_test_split
+
+from mlProject import logger
 from mlProject.entity.config_entity import DataTransformationConfig
 
 
-
 class DataTransformation:
-    def __init__(self, config: DataTransformationConfig):
+    def __init__(self, config: DataTransformationConfig, inference=False):
         self.config = config
+        self.inference = inference
 
-    
-    ## Note: You can add different data transformation techniques such as Scaler, PCA and all
-    #You can perform all kinds of EDA in ML cycle here before passing this data to the model
-
-    # I am only adding train_test_spliting cz this data is already cleaned up
-
-
-    def train_test_spliting(self):
+    def apply_transformations(self):
         data = pd.read_csv(self.config.data_path)
+        for transformation in self.config.transformation_config:
+            # Create an instance of the class
+            class_name = transformation.name
+            if class_name in globals():
+                Transformator = globals()[class_name](
+                    config=self.config, inference=self.inference
+                )
+                Transformator.transform_data(data=data)
+            else:
+                raise NameError(f"Class {class_name} is not defined.")
 
-        # Split the data into training and test sets. (0.75, 0.25) split.
-        train, test = train_test_split(data)
-
-        train.to_csv(os.path.join(self.config.root_dir, "train.csv"),index = False)
-        test.to_csv(os.path.join(self.config.root_dir, "test.csv"),index = False)
-
-        logger.info("Splited data into training and test sets")
-        logger.info(train.shape)
-        logger.info(test.shape)
-
-        print(train.shape)
-        print(test.shape)
-        
+        return data
