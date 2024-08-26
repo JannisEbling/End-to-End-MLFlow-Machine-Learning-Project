@@ -1,0 +1,1 @@
+[{'name': 'TrainTestSplitterSK', 'test_size': 0.25}, {'name': 'StandardScalerSK'}]
