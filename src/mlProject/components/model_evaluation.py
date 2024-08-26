@@ -51,7 +51,7 @@ class ModelEvaluation:
             mlflow.log_metric("mae", mae)
 
             # Model registry does not work with file store
-            if tracking_url_type_store != "file":
+            if tracking_url_type_store == "file":
 
                 # Register the model
                 # There are other ways to use the Model Registry, which depends on the use case,
